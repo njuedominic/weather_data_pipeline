@@ -1,0 +1,9 @@
+locations:
+  - "Nairobi,KE"
+  - "Murang'a,KE"
+  - "Kajiado,KE"
+  - "Machakos,KE"
+  - "Kiambu,KE"
+settings:
+  units: "metric"
+  output_path: "data/raw/weather_report.csv"
