@@ -9,4 +9,6 @@ An ETL Pipeline that extracts data from Openweather for five major towns in the 
 3. Load - Appending or overwriting a CSV file
 
 #### Local Set up
+#### Data Dictionary
+
 
