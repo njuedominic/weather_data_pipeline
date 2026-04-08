@@ -1,4 +1,4 @@
-import requests
+import requests # To fetch weather data from the OpenWeather API
 import os
 from dotenv import load_dotenv # secure applications by keeping secrets (API keys, passwords) out of code.
 load_dotenv()
@@ -17,7 +17,16 @@ class dataExtractor:
         try:
             response = requests.get(self.base_url, params=params)
             response.raise_for_status()
-            return response.json()
+            data = response.json()
+
+            return{
+                "city": data["name"],
+                "temperature": data["main"]["temp"],
+                "humidity": data["main"]["humidity"],
+                "description": data["weather"][0]["description"],
+                "timestamp": data["dt"]
+            }
+
         except requests.exceptions.RequestException as e:
             print(f"Error fetching data for {city_name}: {e}")
             return None
